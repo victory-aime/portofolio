@@ -1,10 +1,11 @@
 'use client';
 
-import { Box, Flex, Text, VStack } from '@chakra-ui/react';
+import { Box, Button, Flex, Text, VStack } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import Image from 'next/image';
 import { Facebook, Instagram, Linkedin } from '_assets/svg';
 import { hexToRGB } from '_theme/colors';
+import { DownloadIcon } from '@chakra-ui/icons';
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -37,6 +38,16 @@ const Hero = () => {
             textAlign={'justify'}>
             {t('PORTFOLIO_DESCRIPTION')}
           </Text>
+          <Button
+            color={'white'}
+            _hover={{
+              background: 'linear-gradient(to left, #4CA9FF 49%, #3BF686 100%)',
+            }}
+            rightIcon={<DownloadIcon />}
+            _active={{ background: '#000000' }}
+            bg={'linear-gradient(to right, #4CA9FF 49%, #3BF686 100%)'}>
+            {t('DOWNLOAD_CV')}
+          </Button>
         </VStack>
       </Box>
       <Flex

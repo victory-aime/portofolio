@@ -1,18 +1,28 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
+import Services from '_components/service/Services';
 import Header from '_components/header/Header';
 import Hero from '_components/hero/Hero';
 import Project from '_components/project/Project';
+import SkillProgress from '_components/MySkills/SkillProgress';
+import MySkills from '_/components/MySkills/MySkills';
 
 export default function Home() {
   return (
-    <Box bg="linear-gradient(180deg, #0F0F0F 0%, #060021 100%)">
+    <Box bg={'linear-gradient(180deg, #0F0F0F 0%, #060021 100%)'}>
       <Header />
       <Box mt={50}>
         <Hero />
       </Box>
       <Box mt={50}>
+        <Services />
+      </Box>
+      <Box mt={50}>
         <Project />
       </Box>
+      <Flex mt={30} flexDirection={'column'} gap={'30px'}>
+        <MySkills />
+        <SkillProgress />
+      </Flex>
     </Box>
   );
 }

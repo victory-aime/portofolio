@@ -32,6 +32,9 @@ const colors: {
   gray: {
     500: '#999999',
   },
+  white: {
+    500: '#FFFFFF',
+  },
 };
 
 /**
