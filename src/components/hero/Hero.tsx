@@ -7,9 +7,10 @@ import { Facebook, Instagram, Linkedin } from '_assets/svg';
 import { hexToRGB } from '_theme/colors';
 import { DownloadIcon } from '@chakra-ui/icons';
 
+export const svgArray = [Facebook, Instagram, Linkedin];
+
 const Hero = () => {
   const { t } = useTranslation();
-  const svgArray = [Facebook, Instagram, Linkedin];
   return (
     <Flex
       width={'100%'}

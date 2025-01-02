@@ -47,6 +47,13 @@ function MySkills() {
               style={{
                 color: '#7456FF',
               }}>
+              Tools
+            </span>{' '}
+            and{' '}
+            <span
+              style={{
+                color: '#7456FF',
+              }}>
               Skills
             </span>
           </Text>

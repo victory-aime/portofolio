@@ -35,6 +35,9 @@ const colors: {
   white: {
     500: '#FFFFFF',
   },
+  form: {
+    500: '#0A0D17',
+  },
 };
 
 /**
