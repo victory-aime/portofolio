@@ -37,11 +37,28 @@ const Header = () => {
       label: 'Français',
     },
   ];
+  const links = [
+    {
+      title: 'Home',
+    },
+    {
+      title: 'Services',
+    },
+    {
+      title: 'MySkills',
+    },
+    {
+      title: 'Certifications',
+    },
+    {
+      title: 'Contact',
+    },
+  ];
 
   return (
     <Box p={'10px'} bgColor={'#0F0F0F'} w={'100%'}>
       <Flex p={'10px'} alignItems={'center'} justifyContent={'space-between'}>
-        <Box width={'100%'}>
+        <Box w={'500px'}>
           <Box>
             <Text fontSize={'2xl'} fontWeight={'bold'}>
               {t('MY')}
@@ -50,17 +67,21 @@ const Header = () => {
           </Box>
         </Box>
         <Flex p={'5px'} width={'100%'}>
-          {Array.from({ length: 5 }).map((_, index) => (
+          {links?.map((item, index) => (
             <HStack width={'100%'} key={index} spacing={'10px'}>
-              <Box>{index}</Box>
+              <Text
+                _hover={{
+                  cursor: 'pointer',
+                  color: '#7456FF',
+                  marginBottom: '10px',
+                }}>
+                {t(item?.title)}
+              </Text>
             </HStack>
           ))}
           <Menu>
             <MenuButton
               width={'100%'}
-              bg={'none'}
-              _active={{ background: 'none' }}
-              _hover={{ background: 'none' }}
               as={Button}
               leftIcon={
                 <FlagImageComponent

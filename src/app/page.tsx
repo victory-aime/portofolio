@@ -1,10 +1,14 @@
+'use client';
 import { Box, Flex } from '@chakra-ui/react';
 import Services from '_components/service/Services';
 import Header from '_components/header/Header';
 import Hero from '_components/hero/Hero';
 import Project from '_components/project/Project';
 import SkillProgress from '_components/MySkills/SkillProgress';
-import MySkills from '_/components/MySkills/MySkills';
+import MySkills from '_components/MySkills/MySkills';
+import Certifications from '_components/certification/Certifications';
+import Contact from '_components/contact/Contact';
+import Footer from '_components/footer/Footer';
 
 export default function Home() {
   return (
@@ -23,6 +27,15 @@ export default function Home() {
         <MySkills />
         <SkillProgress />
       </Flex>
+      <Box mt={50}>
+        <Certifications />
+      </Box>
+      <Box mt={50}>
+        <Contact />
+      </Box>
+      <Box mt={50}>
+        <Footer />
+      </Box>
     </Box>
   );
 }

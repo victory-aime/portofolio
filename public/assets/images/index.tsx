@@ -8,6 +8,8 @@ import GraphQL from './graphQl.png';
 import Css from './css.png';
 import MongoDB from './mongoDb.png';
 import ReactImage from './reactjs.png';
+import BackgroungContactForm from './background.png';
+import FooterImgae from './footer.png';
 
 export {
   Css,
@@ -20,4 +22,6 @@ export {
   ReactImage,
   Git,
   NodeJS,
+  BackgroungContactForm,
+  FooterImgae,
 };

@@ -1,15 +1,13 @@
 'use client';
 
 import React from 'react';
-import { Box, Button, Flex, Text, VStack } from '@chakra-ui/react';
+import { Box, Flex, Link, Text, VStack } from '@chakra-ui/react';
 import { hexToRGB } from '_/theme/colors';
 import { BookIcon } from '_assets/svg';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 import { ArrowRightIcon } from '@chakra-ui/icons';
 function Project() {
   const svgArray = [BookIcon, BookIcon, BookIcon];
-  const router = useRouter();
   return (
     <Flex
       alignItems={'flex-start'}
@@ -82,19 +80,23 @@ function Project() {
           ))}
         </Flex>
         <Flex alignItems={'flex-end'} justifyItems={'flex-end'} mr={'40px'}>
-          <Button
+          <Link
             bg={'linear-gradient(to right, #4CA9FF 49%, #3BF686 100%)'}
-            aria-label={'add-icon'}
-            color={'white'}
-            onClick={() => router.push('/')}
+            alignItems={'center'}
+            justifyContent={'center'}
+            p={'10px'}
+            width={'120px'}
+            borderRadius={'7px'}
             _hover={{
+              textDecoration: 'none',
               background: 'linear-gradient(to left, #4CA9FF 49%, #3BF686 100%)',
             }}
-            rightIcon={
+            href={'https://github.com/victory-aime?tab=repositories'}>
+            <Flex alignItems={'center'} justifyContent={'center'} gap={'10px'}>
+              <Text>See all</Text>
               <ArrowRightIcon fill={'white'} width={'12px'} height={'12px'} />
-            }>
-            See all
-          </Button>
+            </Flex>
+          </Link>
         </Flex>
       </Flex>
     </Flex>

@@ -16,8 +16,9 @@ const skills = {
     { name: 'NestJS', mastery: 90 },
     { name: 'PostgreSQL', mastery: 100 },
   ],
-  Deployment: [
+  'Deployment & Orchestration': [
     { name: 'Git/GitHub', mastery: 85 },
+    { name: 'Docker', mastery: 70 },
     { name: 'RESTful APIs', mastery: 90 },
     { name: 'Responsive Design', mastery: 95 },
   ],

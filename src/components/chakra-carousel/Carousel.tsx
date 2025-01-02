@@ -460,17 +460,4 @@ const Carousel: FC<CarouselProps> = ({
   );
 };
 
-Carousel.defaultProps = {
-  withControl: true,
-  withPagination: true,
-  withPaginationArrows: true,
-  isInfinite: false,
-  type: CAROUSEL_TYPE.HORIZONTAL,
-  setSlideTo: 0,
-  onChange: () => {
-    console.log('slide change');
-  },
-  isWidget: false,
-};
-
 export default Carousel;
