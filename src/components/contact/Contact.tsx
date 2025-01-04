@@ -15,25 +15,37 @@ import FormTextArea from '../form-textArea/FormTextArea';
 import { hexToRGB } from '_theme/colors';
 import Image from 'next/image';
 import { BackgroungContactForm } from '_assets/images';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
+  const { t } = useTranslation();
   return (
     <Box width={'100%'}>
-      <Center
-        width={'100%'}
-        p={'20px'}
-        //bgColor={'red.200'}
-        gap={'50px'}
-        flexDirection={'column'}>
-        <VStack spacing={'10px'} maxW={'500px'}>
-          <Text>Get in Touch</Text>
-          <Text textAlign={'center'}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic eius
-            fugit aut omnis. Officiis explicabo, voluptatibus facere assumenda
-            aliquam nihil provident perspiciatis id sapiente! Vero, sint quo.
-            Doloremque, ipsum veniam.
+      <VStack spacing={'12px'} alignItems={'flex-start'} p={'30px'}>
+        <Box>
+          <Text fontSize={'24px'}>
+            {t('CONTACT.TITLE')}{' '}
+            <span
+              style={{
+                color: '#7456FF',
+              }}>
+              {t('COMMON.ME')}
+            </span>
           </Text>
-        </VStack>
+          <Box
+            width={'70px'}
+            borderColor={'primary.500'}
+            borderBottomWidth={'12px'}
+            borderRadius={'12px'}
+          />
+        </Box>
+        <Box width={'600px'}>
+          <Text fontSize={'14px'} fontWeight={'regular'} color={'gray.500'}>
+            {t('CONTACT.DESC')}
+          </Text>
+        </Box>
+      </VStack>
+      <Center width={'100%'} p={'20px'} gap={'50px'} flexDirection={'column'}>
         <Box
           p={'20px'}
           bgColor={hexToRGB('form', 0.5)}
@@ -46,12 +58,10 @@ const Contact = () => {
             gap={'30px'}>
             <Box width={'100%'} p={'5px'}>
               <VStack spacing={'8px'} alignItems={'flex-start'}>
-                <Text>Form</Text>
-                <Text>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Saepe suscipit veritatis pariatur asperiores vel nemo sapiente
-                  molestiae quo neque incidunt sunt dolores vitae dolore
+                <Text fontSize={'20px'} fontWeight={'bold'}>
+                  {t('COMMON.SEND_ME')}
                 </Text>
+                <Text>{t('COMMON.FORM.TITLE')}</Text>
               </VStack>
               <Box width={'100%'} mt={'20px'}>
                 <Formik
@@ -65,18 +75,24 @@ const Contact = () => {
                   onSubmit={() => {}}>
                   <VStack width={'100%'} spacing={'20px'}>
                     <HStack width={'100%'} gap={'10px'}>
-                      <FormTextInput name={'name'} placeholder={'name'} />
+                      <FormTextInput name={'name'} placeholder={'Nom'} />
                       <FormTextInput
                         name={'firstName'}
-                        placeholder={'firstName'}
+                        placeholder={'COMMON.FORM.FIRST_NAME'}
                       />
                     </HStack>
-                    <FormTextInput name={'name'} placeholder={'name'} />
                     <FormTextInput
-                      name={'firstName'}
-                      placeholder={'firstName'}
+                      name={'email'}
+                      placeholder={'COMMON.FORM.EMAIL'}
                     />
-                    <FormTextArea name={'message'} placeholder={'message'} />
+                    <FormTextInput
+                      name={'subject'}
+                      placeholder={'COMMON.FORM.SUBJECT'}
+                    />
+                    <FormTextArea
+                      name={'message'}
+                      placeholder={'COMMON.FORM.MESSAGE'}
+                    />
                     <Button
                       color={'white'}
                       bg={
@@ -86,7 +102,7 @@ const Contact = () => {
                         bg: 'linear-gradient(to left, #763AF5 49%, #A604F2 100%)',
                       }}
                       width={'full'}>
-                      Submit
+                      {t('COMMON.SEND')}
                     </Button>
                   </VStack>
                 </Formik>
@@ -111,7 +127,9 @@ const Contact = () => {
                 maxWidth={'100%'}
                 opacity={0.2}
                 objectPosition={'center'}>
-                <Text>ium architecto, sit omnis nulla dolore veritatis</Text>
+                <Text fontSize={'sm'} color={'gray.500'}>
+                  {t('COMMON.FORM.CITATION')}
+                </Text>
               </Box>
             </Flex>
           </Flex>

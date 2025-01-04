@@ -1,5 +1,13 @@
 {
-  "MY": "Mon",
+  "HEADER": {
+    "HOME": "Accueil",
+    "SERVICE": "Services",
+    "SKILLS": "Compétences",
+    "CERTIFICATION": "Certifications",
+    "CONTACT": "Contact"
+  },
+  "MY": "Mes",
+  "MON": "Mon",
   "PORTFOLIO": "Portfolio",
   "HELLO": "Bonjour les amis",
   "WHO_AM_I": "Je suis",
@@ -7,5 +15,59 @@
   "JOB_TITLE": "Développeur Full-Stack JavaScript",
   "DOWNLOAD_CV": "Télécharger CV",
   "FIND_ME_ON": "Trouvez moi sur",
-  "PORTFOLIO_DESCRIPTION": "Je suis un développeur Full-Stack JavaScript passionné par la création d'interfaces utilisateur intuitives et des systèmes performants. Je crois fermement que l'attractivité du design et une expérience utilisateur fluide sont essentielles pour renforcer l'identité d'un produit. Ma approche se concentre sur la harmonie des dispositions, les détails visuels attentifs et l'architecture robuste. Actuellement, je prépare mon niveau en UI/UX et en développement d'applications web dynamiques, en intégrant des technologies modernes telles que React, Node.js et PostgreSQL etc..."
+  "PORTFOLIO_DESCRIPTION": "Je suis un développeur Full-Stack JavaScript passionné par la création d'interfaces utilisateur intuitives et des systèmes performants. Je crois fermement que l'attractivité du design et une expérience utilisateur fluide sont essentielles pour renforcer l'identité d'un produit. Ma approche se concentre sur la harmonie des dispositions, les détails visuels attentifs et l'architecture robuste. Actuellement, je prépare mon niveau en UI/UX et en développement d'applications web dynamiques, en intégrant des technologies modernes telles que React, Node.js et PostgreSQL etc...",
+  "SERVICE": {
+    "TITLE1": "Ce que",
+    "TITLE2": "Je peux faire ",
+    "DESC": "Je peux vous aider à créer et à développer des solutions numériques innovantes adaptées à vos besoins. Qu'il s'agisse de concevoir une application mobile, de développer un site web interactif, de créer des designs uniques avec Figma ou de mettre en place des systèmes backend robustes, je suis là pour transformer vos idées en réalité. ",
+    "FEATURES": {
+      "MOBILE_APP": "Développement web et mobile ",
+      "MOBILE_APP_DESC": "Je conçois et développe des applications web et mobiles modernes, intuitives et performantes. En utilisant des technologies telles que ReactJS, React Native et NextJS, je m'assure que chaque projet est adapté à tous les appareils, avec une expérience utilisateur optimale. ",
+      "FIGMA_APP": " UI/UX design ",
+      "FIGMA_APP_DESC": " Je crée des designs sur mesure pour vos projets numériques, en me concentrant sur l'esthétique et l'ergonomie. Avec Figma, je crée des interfaces utilisateurs modernes, intuitives et adaptées à vos objectifs ",
+      "BACKEND_APP": " Développement backend ",
+      "BACKEND_APP_DESC": "Je développe des systèmes backend puissants et sécurisés, en utilisant des technologies telles que NestJS, Express, et PostgreSQL. Je m'assure que vos applications disposent d'une base solide pour gérer vos données et offrir une expérience utilisateur fluide. "
+    }
+  },
+  "PROJECT": {
+    "TITLE": "Projets",
+    "DESC": "Découvrez une sélection de mes projets, mettant en avant mon expertise en développement web et mobile, en design UI/UX, et en développement backend. Chaque projet reflète mon engagement à créer des solutions performantes, innovantes et adaptées à des besoins réels. Ces réalisations illustrent ma capacité à transformer des idées en produits concrets et fonctionnels, en alliant technologie, design et stratégie.",
+    "FEATURES": {
+      "SAAS_SCHOOL_APP": "Gestion interne de l'école (SaaS)",
+      "SAAS_SCHOOL_DESC": "Une plateforme SaaS complète conçue pour simplifier la gestion interne des écoles. Elle offre des fonctionnalités telles que la gestion des étudiants, des enseignants, des emplois du temps et des résultats académiques. Le projet se concentre sur l'optimisation des processus administratifs et la centralisation des données, offrant une solution moderne et efficace pour les écoles",
+      "RENTAL_APP": "Application de gestion de la location de voitures (SaaS)",
+      "RENTAL_APP_DESC": "Un projet SaaS en cours visant à fournir une solution intégrée pour la gestion des locations de voitures. Accessible sur le web et sur mobile, cette application permet aux utilisateurs de gérer leur flotte, de suivre les réservations, de générer des factures et d'offrir une expérience transparente à leurs clients. Avec son design moderne et son approche centrée sur l'utilisateur, cette plateforme promet d'automatiser les tâches répétitives et d'améliorer la productivité des sociétés de location.",
+      "BVG_APP": "BVG-Innovation - Site web vitrine",
+      "BVG_APP_DESC": "Le site officiel de ma startup, BVG-Innovation, conçu pour présenter nos services, nos valeurs et notre vision. Ce site vitrine reflète notre identité, avec un design épuré et une navigation intuitive, conçu pour capter l'attention des clients potentiels et établir une présence en ligne professionnelle et percutante."
+    }
+  },
+  "COMMON": {
+    "MY": "Ma",
+    "ME": "Moi",
+    "TOOLS": "Outils",
+    "AND": "et",
+    "SKILLS": "Compétences",
+    "SEND": "Envoyez votre message",
+    "SEE_ALL": "Voir tous",
+    "QUESTIONS": "Avez-vous des Questions?",
+    "SEND_ME": " Envoyez-moi un message",
+    "VIEW_CERTIFICATE": "Voir la certification",
+    "FORM": {
+      "TITLE": " Remplissez le formulaire ci-dessous avec vos coordonnées et je vous recontacterai dès que possible.",
+      "NOM": "Nom",
+      "FIRST_NAME": "Prénom",
+      "EMAIL": "Email",
+      "SUJET": "Sujet",
+      "MESSAGE": "Votre message...",
+      "CITATION": " Toujours prêt à discuter de vos idées et de vos projets !"
+    }
+  },
+  "TOOLS": "Je maîtrise un large éventail d'outils et de technologies modernes, ce qui me permet de créer des solutions complètes et performantes adaptées aux besoins des utilisateurs. Mon expertise couvre le développement frontend et backend, le design UI/UX et le déploiement d'applications robustes. En utilisant des frameworks et des librairies comme ReactJS, NextJS et NestJS, combinés à des technologies comme PostgreSQL et TailwindCSS, je suis capable de transformer des idées en produits fonctionnels et esthétiques. Mon objectif est de fournir des solutions technologiques innovantes tout en restant concentré sur l'expérience utilisateur et l'efficacité",
+  "CERTIFICATION": "Certifications",
+  "CERTIF_DESC": "Certification Meta Front-End Developer, qui atteste de mes compétences en développement front-end. Cette formation m'a permis de maîtriser les fondamentaux du développement web moderne, notamment HTML, CSS, JavaScript, React, ainsi que les bonnes pratiques en matière de responsive design et d'accessibilité. Elle reflète mon engagement en faveur de l'excellence technique et ma capacité à créer des interfaces utilisateurs intuitives et performantes.",
+  "META": "J'ai suivi la certification Meta Front-End Developer, un programme intensif conçu par Meta (anciennement Facebook) pour former des développeurs front-end compétents et polyvalents. Cette certification couvre un large éventail de compétences essentielles, notamment ",
+  "CONTACT": {
+    "TITLE": "Contactez-",
+    "DESC": "Vous avez une idée, un projet ou vous souhaitez simplement discuter de vos besoins en matière de développement web ou mobile ? N'hésitez pas à me contacter, je suis toujours prêt à collaborer à des projets passionnants."
+  }
 }

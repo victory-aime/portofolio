@@ -4,10 +4,38 @@ import React from 'react';
 import { Box, Flex, Link, Text, VStack } from '@chakra-ui/react';
 import { hexToRGB } from '_/theme/colors';
 import { BookIcon } from '_assets/svg';
-import Image from 'next/image';
 import { ArrowRightIcon } from '@chakra-ui/icons';
+import { useTranslation } from 'react-i18next';
+import { keyframes } from '@emotion/react';
+
 function Project() {
-  const svgArray = [BookIcon, BookIcon, BookIcon];
+  const { t } = useTranslation();
+
+  const zoomRotate = keyframes`
+    from { opacity: 0; transform: scale(0.8) rotate(-10deg); }
+    to { opacity: 1; transform: scale(1) rotate(0deg); }
+  `;
+
+  const zoomRotateAnimation = `${zoomRotate} 0.8s ease-in-out forwards`;
+
+  const svgArray = [
+    {
+      icon: <BookIcon />,
+      title: 'PROJECT.FEATURES.SAAS_SCHOOL_APP',
+      desc: 'PROJECT.FEATURES.SAAS_SCHOOL_DESC',
+    },
+    {
+      icon: <BookIcon />,
+      title: 'PROJECT.FEATURES.RENTAL_APP',
+      desc: 'PROJECT.FEATURES.RENTAL_APP_DESC',
+    },
+    {
+      icon: <BookIcon />,
+      title: 'PROJECT.FEATURES.BVG_APP',
+      desc: 'PROJECT.FEATURES.BVG_APP_DESC',
+    },
+  ];
+
   return (
     <Flex
       alignItems={'flex-start'}
@@ -18,12 +46,12 @@ function Project() {
       <VStack spacing={'12px'} alignItems={'center'} width={'100%'}>
         <Box>
           <Text fontSize={'24px'}>
-            My{' '}
+            {t('MY')} {''}
             <span
               style={{
                 color: '#7456FF',
               }}>
-              Projects
+              {t('PROJECT.TITLE')} {''}
             </span>
           </Text>
         </Box>
@@ -33,11 +61,7 @@ function Project() {
             fontSize={'14px'}
             fontWeight={'regular'}
             color={'gray.500'}>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using Content here, content
-            here
+            {t('PROJECT.DESC')}
           </Text>
         </Box>
       </VStack>
@@ -53,7 +77,7 @@ function Project() {
           justifyContent={'center'}
           gap={'20px'}
           flexWrap={'wrap'}>
-          {svgArray?.map((_, index) => (
+          {svgArray?.map((item, index) => (
             <Box
               key={index}
               borderRadius={'12px'}
@@ -62,19 +86,16 @@ function Project() {
               borderWidth={2}
               _hover={{ backgroundColor: 'primary.500' }}
               borderColor={'linear-gradient(180deg, #4CA9FF 49%, #3BF686 100%)'}
-              width={'300px'}>
+              width={'300px'}
+              animation={zoomRotateAnimation}
+              style={{ animationDelay: `${index * 0.3}s` }}>
               <VStack
                 alignItems={'flex-start'}
                 justifyContent={'center'}
                 spacing={'10px'}>
-                <Image src={_} alt={'book'} width={24} height={24} />
-                <Text fontSize={'20px'}>App Development</Text>
-                <Text fontSize={'12px'}>
-                  It is a long established fact that a reader will be The point
-                  of using Lorem Ipsum is that it has a more-or-less normal
-                  distribution of letters, as opposed to using Content here,
-                  content here
-                </Text>
+                <div>{item?.icon}</div>
+                <Text fontSize={'20px'}>{t(item?.title)}</Text>
+                <Text fontSize={'12px'}>{t(item?.desc)}</Text>
               </VStack>
             </Box>
           ))}
@@ -93,7 +114,7 @@ function Project() {
             }}
             href={'https://github.com/victory-aime?tab=repositories'}>
             <Flex alignItems={'center'} justifyContent={'center'} gap={'10px'}>
-              <Text>See all</Text>
+              <Text>{t('COMMON.SEE_ALL')}</Text>
               <ArrowRightIcon fill={'white'} width={'12px'} height={'12px'} />
             </Flex>
           </Link>

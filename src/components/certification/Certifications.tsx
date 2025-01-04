@@ -1,19 +1,23 @@
+'use client';
+
 import React from 'react';
 import { Box, Text, VStack, Flex, Center, Link } from '@chakra-ui/react';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 const Certifications = () => {
+  const { t } = useTranslation();
   return (
     <Box p={'30px'} width={'100%'}>
       <VStack spacing={'12px'} alignItems={'flex-start'}>
         <Box>
           <Text fontSize={'24px'}>
-            My{' '}
+            {t('MY')}{' '}
             <span
               style={{
                 color: '#7456FF',
               }}>
-              Certifications
+              {t('CERTIFICATION')}
             </span>
           </Text>
           <Box
@@ -25,11 +29,7 @@ const Certifications = () => {
         </Box>
         <Box width={'600px'}>
           <Text fontSize={'14px'} fontWeight={'regular'} color={'gray.500'}>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using Content here, content
-            here
+            {t('CERTIF_DESC')}
           </Text>
         </Box>
       </VStack>
@@ -60,12 +60,7 @@ const Certifications = () => {
                 Meta Front-End{' '}
                 <span style={{ color: '#7456FF' }}>Developer</span>
               </Text>
-              <Text>
-                I completed the Meta Front-End Developer certification, an
-                intensive program designed by Meta (formerly Facebook) to train
-                competent and versatile front-end developers. This certification
-                covers a wide range of essential skills, including
-              </Text>
+              <Text>{t('META')}</Text>
             </VStack>
             <Flex
               alignItems={'flex-end'}
@@ -76,7 +71,6 @@ const Certifications = () => {
                 alignItems={'center'}
                 justifyContent={'center'}
                 p={'10px'}
-                width={'150px'}
                 borderRadius={'7px'}
                 _hover={{
                   textDecoration: 'none',
@@ -86,7 +80,7 @@ const Certifications = () => {
                 href={
                   'https://coursera.org/share/6a23692fa36b57a2946d9869314a26db'
                 }>
-                view certificate
+                {t('COMMON.VIEW_CERTIFICATE')}
               </Link>
             </Flex>
           </Box>

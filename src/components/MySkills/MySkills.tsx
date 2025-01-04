@@ -17,8 +17,10 @@ import {
   Tailwind,
 } from '_assets/images';
 import { hexToRGB } from '_/theme/colors';
+import { useTranslation } from 'react-i18next';
 
 function MySkills() {
+  const { t } = useTranslation();
   const imageArray = [
     Css,
     Docker,
@@ -42,19 +44,19 @@ function MySkills() {
       <VStack spacing={'12px'} alignItems={'flex-start'}>
         <Box>
           <Text fontSize={'24px'}>
-            My{' '}
+            {t('MY')}{' '}
             <span
               style={{
                 color: '#7456FF',
               }}>
-              Tools
+              {t('COMMON.TOOLS')}
             </span>{' '}
-            and{' '}
+            {t('COMMON.AND')}{' '}
             <span
               style={{
                 color: '#7456FF',
               }}>
-              Skills
+              {t('SKILLS')}
             </span>
           </Text>
           <Box
@@ -66,11 +68,7 @@ function MySkills() {
         </Box>
         <Box width={'600px'}>
           <Text fontSize={'14px'} fontWeight={'regular'} color={'gray.500'}>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using Content here, content
-            here
+            {t('TOOLS')}
           </Text>
         </Box>
       </VStack>

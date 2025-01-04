@@ -1,10 +1,35 @@
 import { Box, Flex, VStack, Text } from '@chakra-ui/react';
+import { keyframes } from '@emotion/react';
 import { hexToRGB } from '_/theme/colors';
 import { BookIcon } from '_assets/svg';
-import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
+
+const fadeIn = keyframes`
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+`;
+
+const fadeInAnimation = `${fadeIn} 0.8s ease-in-out forwards`;
 
 const Services = () => {
-  const svgArray = [BookIcon, BookIcon, BookIcon, BookIcon, BookIcon, BookIcon];
+  const { t } = useTranslation();
+  const svgArray = [
+    {
+      icon: <BookIcon />,
+      title: 'SERVICE.FEATURES.MOBILE_APP',
+      desc: 'SERVICE.FEATURES.MOBILE_APP_DESC',
+    },
+    {
+      icon: <BookIcon />,
+      title: 'SERVICE.FEATURES.BACKEND_APP',
+      desc: 'SERVICE.FEATURES.BACKEND_APP_DESC',
+    },
+    {
+      icon: <BookIcon />,
+      title: 'SERVICE.FEATURES.FIGMA_APP',
+      desc: 'SERVICE.FEATURES.FIGMA_APP_DESC',
+    },
+  ];
 
   return (
     <Flex
@@ -16,12 +41,12 @@ const Services = () => {
       <VStack spacing={'12px'} alignItems={'flex-start'}>
         <Box>
           <Text fontSize={'24px'}>
-            What{' '}
+            {t('SERVICE.TITLE1')} {''}
             <span
               style={{
                 color: '#7456FF',
               }}>
-              I do
+              {t('SERVICE.TITLE2')}
             </span>
           </Text>
           <Box
@@ -33,11 +58,7 @@ const Services = () => {
         </Box>
         <Box width={'600px'}>
           <Text fontSize={'14px'} fontWeight={'regular'} color={'gray.500'}>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using Content here, content
-            here
+            {t('SERVICE.DESC')}
           </Text>
         </Box>
       </VStack>
@@ -48,24 +69,31 @@ const Services = () => {
         justifyContent={'center'}
         gap={'20px'}
         flexWrap={'wrap'}>
-        {svgArray?.map((_, index) => (
+        {svgArray?.map((item, index) => (
           <Box
             key={index}
             borderRadius={'12px'}
             p={'12px'}
             bgColor={hexToRGB('primary', 0.1)}
-            width={'300px'}>
+            width={'350px'}
+            height={'200px'}
+            animation={fadeInAnimation}
+            style={{ animationDelay: `${index * 0.2}s` }}>
             <VStack
               alignItems={'flex-start'}
               justifyContent={'center'}
+              width={'100%'}
               spacing={'10px'}>
-              <Image src={_} alt={'book'} width={24} height={24} />
-              <Text fontSize={'20px'}>App Development</Text>
-              <Text fontSize={'12px'}>
-                It is a long established fact that a reader will be The point of
-                using Lorem Ipsum is that it has a more-or-less normal
-                distribution of letters, as opposed to using Content here,
-                content here
+              <Flex
+                alignItems={'center'}
+                justifyContent={'center'}
+                mb={'20px'}
+                gap={'20px'}>
+                <div>{item?.icon}</div>
+                <Text fontSize={'18px'}>{t(item?.title)}</Text>
+              </Flex>
+              <Text fontSize={'12px'} textAlign={'center'}>
+                {t(item?.desc)}
               </Text>
             </VStack>
           </Box>

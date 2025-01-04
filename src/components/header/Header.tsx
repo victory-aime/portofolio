@@ -39,19 +39,19 @@ const Header = () => {
   ];
   const links = [
     {
-      title: 'Home',
+      title: 'HEADER.HOME',
     },
     {
-      title: 'Services',
+      title: 'HEADER.SERVICE',
     },
     {
-      title: 'MySkills',
+      title: 'HEADER.SKILLS',
     },
     {
-      title: 'Certifications',
+      title: 'HEADER.CERTIFICATION',
     },
     {
-      title: 'Contact',
+      title: 'HEADER.CONTACT',
     },
   ];
 
@@ -61,7 +61,7 @@ const Header = () => {
         <Box w={'500px'}>
           <Box>
             <Text fontSize={'2xl'} fontWeight={'bold'}>
-              {t('MY')}
+              {t('MON')}
               <span style={{ color: '#7456FF' }}>{t('PORTFOLIO')}</span>{' '}
             </Text>
           </Box>

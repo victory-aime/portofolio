@@ -1,14 +1,13 @@
 'use client';
 
 import React from 'react';
-import { Box, Text, Flex, Center, VStack } from '@chakra-ui/react';
+import { Box, Text, Flex, Center, VStack, Link } from '@chakra-ui/react';
 import Image from 'next/image';
 import { FooterImgae } from '_assets/images';
 import { useTranslation } from 'react-i18next';
 import { hexToRGB } from '_theme/colors';
 import { svgArray } from '../hero/Hero';
 import { EmailIcon, PhoneIcon } from '@chakra-ui/icons';
-import Link from 'next/link';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -20,7 +19,7 @@ const Footer = () => {
         justifyContent={'space-between'}>
         <Box width={'100%'}>
           <VStack alignItems={'flex-start'} spacing={'20px'}>
-            <Text> Have a Questions?</Text>
+            <Text>{t('COMMON.QUESTIONS')}</Text>
             <VStack spacing={'15px'} alignItems={'flex-start'}>
               <Flex
                 opacity={0.5}
@@ -50,18 +49,19 @@ const Footer = () => {
             gap={'20px'}
             justifyContent={'flex-start'}>
             <Text>{t('FIND_ME_ON')}</Text>
-            {svgArray.map((_, index) => (
-              <Flex
-                key={index}
-                gap={'20px'}
-                borderRadius={'50px'}
-                alignItems={'center'}
-                justifyContent={'center'}
-                width={'45px'}
-                height={'45px'}
-                bgColor={hexToRGB('primary', 0.2)}>
-                <Image src={_} alt={'svg'} width={24} height={24} />
-              </Flex>
+            {svgArray.map((item, index) => (
+              <Link key={index} href={item?.link}>
+                <Flex
+                  gap={'20px'}
+                  borderRadius={'50px'}
+                  alignItems={'center'}
+                  justifyContent={'center'}
+                  width={'45px'}
+                  height={'45px'}
+                  bgColor={hexToRGB('primary', 0.2)}>
+                  <div>{item?.icon}</div>
+                </Flex>
+              </Link>
             ))}
           </Flex>
         </Box>

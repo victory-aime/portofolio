@@ -1,5 +1,13 @@
 {
+  "HEADER": {
+    "HOME": "Home",
+    "SERVICE": "Services",
+    "SKILLS": "Skills",
+    "CERTIFICATION": "Certifications",
+    "CONTACT": "Contact"
+  },
   "MY": "My",
+  "MON": "My",
   "PORTFOLIO": "Portfolio",
   "HELLO": "Hello buds",
   "WHO_AM_I": "I am",
@@ -7,5 +15,58 @@
   "JOB_TITLE": "Full-Stack JavaScript Developer",
   "DOWNLOAD_CV": "Download CV",
   "FIND_ME_ON": "Find me on",
-  "PORTFOLIO_DESCRIPTION": "I'm a Full-Stack JavaScript Developer passionate about creating intuitive user interfaces and high-performance systems. I firmly believe that attractive design and a smooth user experience are essential to strengthen the identity of a product. My approach focuses on harmonious layout, careful visual details and robust architecture. Currently, I am perfecting my skills in UI/UX and dynamic web application development, integrating modern technologies like React, Node.js and PostgreSQL etc..."
+  "PORTFOLIO_DESCRIPTION": "I'm a Full-Stack JavaScript Developer passionate about creating intuitive user interfaces and high-performance systems. I firmly believe that attractive design and a smooth user experience are essential to strengthen the identity of a product. My approach focuses on harmonious layout, careful visual details and robust architecture. Currently, I am perfecting my skills in UI/UX and dynamic web application development, integrating modern technologies like React, Node.js and PostgreSQL etc...",
+  "SERVICE": {
+    "TITLE1": "What",
+    "TITLE2": "I can do",
+    "DESC": "I can help you create and develop innovative digital solutions tailored to your needs. Whether it's designing a mobile app, developing an interactive website, creating unique designs with Figma or setting up robust backend systems, I'm here to turn your ideas into reality.",
+    "FEATURES": {
+      "MOBILE_APP": "Web and Mobile Development",
+      "MOBILE_APP_DESC": "I design and develop modern, intuitive and high-performance web and mobile applications. Using technologies such as ReactJS, React Native, and NextJS, I ensure that each project is adapted to all devices, with an optimal user experience.",
+      "FIGMA_APP": "UI/UX design",
+      "FIGMA_APP_DESC": "I create tailor-made designs for your digital projects, focusing on aesthetics and ergonomics. With Figma, I create modern, intuitive user interfaces tailored to your objectives.",
+      "BACKEND_APP": "Backend development",
+      "BACKEND_APP_DESC": "I develop powerful and secure backend systems, using technologies such as NestJS, Express, and PostgreSQL. I make sure your applications have a solid foundation to manage your data and deliver a smooth user experience.."
+    }
+  },
+  "PROJECT": {
+    "TITLE": "Projects",
+    "DESC": "Discover a selection of my projects, highlighting my expertise in web and mobile development, UI/UX design, and backend development. Each project reflects my commitment to creating high-performance, innovative solutions tailored to real needs. These achievements illustrate my ability to transform ideas into concrete, functional products, by combining technology, design and strategy.",
+    "FEATURES": {
+      "SAAS_SCHOOL_APP": "Internal school management (SaaS)",
+      "SAAS_SCHOOL_DESC": "A comprehensive SaaS platform designed to simplify internal school management. It offers functionalities such as student, teacher, timetable and academic results management. The project focuses on optimizing administrative processes and centralizing data, offering a modern, efficient solution for schools.",
+      "RENTAL_APP": "Car Rental Management Application (SaaS)",
+      "RENTAL_APP_DESC": "An ongoing SaaS project to provide an integrated solution for managing car rentals. Accessible on web and mobile, this application enables users to manage their fleet, track reservations, generate invoices, and offer a seamless experience to their customers. With its modern design and user-centric approach, this platform promises to automate repetitive tasks and improve rental company productivity.",
+      "BVG_APP": "BVG-Innovation - Showcase Website",
+      "BVG_APP_DESC": "The official website of my startup, BVG-Innovation, designed to showcase our services, values and vision. This showcase site reflects our identity, with a clean design and intuitive navigation, designed to capture the attention of potential customers and establish a professional, impactful online presence."
+    }
+  },
+  "COMMON": {
+    "ME": "Me",
+    "TOOLS": "Tools",
+    "AND": "and",
+    "SKILLS": "Skills",
+    "SEND": "Send your message",
+    "SEE_ALL": "See all",
+    "QUESTIONS": "Have a Questions?",
+    "SEND_ME": " Send me a message",
+    "VIEW_CERTIFICATE": "View certification",
+    "FORM": {
+      "TITLE": " Fill in the form below with your contact details and I'll get back to you as soon as possible.",
+      "NAME": "Name",
+      "FIRST_NAME": "First Name",
+      "EMAIL": "Email",
+      "SUBJECT": "Subject",
+      "MESSAGE": "Your message...",
+      "CITATION": " Always ready to discuss your ideas and projects!"
+    }
+  },
+  "TOOLS": "I master a wide range of modern tools and technologies, enabling me to create complete, high-performance solutions tailored to users' needs. My expertise covers frontend and backend development, UI/UX design, and the deployment of robust applications. Using frameworks and libraries like ReactJS, NextJS, and NestJS, combined with technologies like PostgreSQL and TailwindCSS, I'm able to transform ideas into functional and aesthetic products. My aim is to provide innovative technological solutions while remaining focused on user experience and efficiency.",
+  "CERTIFICATION": "Certifications",
+  "CERTIF_DESC": "Meta Front-End Developer certification, which attests to my skills in front-end development. This training has enabled me to master the fundamentals of modern web development, including HTML, CSS, JavaScript, React, and best practices in responsive design and accessibility. It reflects my commitment to technical excellence and my ability to create intuitive, high-performance user interfaces.",
+  "META": "I completed the Meta Front-End Developer certification, an intensive program designed by Meta (formerly Facebook) to train competent and versatile front-end developers. This certification covers a wide range of essential skills, including",
+  "CONTACT": {
+    "TITLE": "Contact",
+    "DESC": "Do you have an idea, a project or would you simply like to discuss your web or mobile development needs? Just drop me a line,I'm always open to collaborating on exciting projects."
+  }
 }

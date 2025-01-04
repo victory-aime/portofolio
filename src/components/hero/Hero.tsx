@@ -1,13 +1,26 @@
 'use client';
 
-import { Box, Button, Flex, Text, VStack } from '@chakra-ui/react';
+import { Box, Button, Flex, Text, VStack, Link } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import Image from 'next/image';
 import { Facebook, Instagram, Linkedin } from '_assets/svg';
 import { hexToRGB } from '_theme/colors';
 import { DownloadIcon } from '@chakra-ui/icons';
 
-export const svgArray = [Facebook, Instagram, Linkedin];
+export const svgArray = [
+  {
+    link: 'https://www.facebook.com/',
+    icon: <Facebook />,
+  },
+  {
+    link: 'https://www.instagram.com/',
+    icon: <Instagram />,
+  },
+  {
+    link: 'https://www.linkedin.com/feed/',
+    icon: <Linkedin />,
+  },
+];
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -70,18 +83,19 @@ const Hero = () => {
           gap={'20px'}
           justifyContent={'center'}>
           <Text>{t('FIND_ME_ON')}</Text>
-          {svgArray.map((_, index) => (
-            <Flex
-              key={index}
-              gap={'20px'}
-              borderRadius={'50px'}
-              alignItems={'center'}
-              justifyContent={'center'}
-              width={'45px'}
-              height={'45px'}
-              bgColor={hexToRGB('primary', 0.2)}>
-              <Image src={_} alt={'svg'} width={24} height={24} />
-            </Flex>
+          {svgArray.map((item, index) => (
+            <Link key={index} href={item?.link}>
+              <Flex
+                gap={'20px'}
+                borderRadius={'50px'}
+                alignItems={'center'}
+                justifyContent={'center'}
+                width={'45px'}
+                height={'45px'}
+                bgColor={hexToRGB('primary', 0.2)}>
+                <div>{item?.icon}</div>
+              </Flex>
+            </Link>
           ))}
         </Flex>
       </Flex>
