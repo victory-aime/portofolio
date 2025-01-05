@@ -34,13 +34,17 @@ const Services = () => {
   return (
     <Flex
       alignItems={'flex-start'}
-      p={'30px'}
+      p={{ base: '20px', md: '30px' }}
       width={'100%'}
-      gap={'30px'}
+      gap={{ base: '20px', md: '30px' }}
       flexDirection={'column'}>
-      <VStack spacing={'12px'} alignItems={'flex-start'}>
+      {/* Header Section */}
+      <VStack
+        spacing={'12px'}
+        alignItems={{ base: 'center', md: 'flex-start' }}
+        textAlign={{ base: 'center', md: 'left' }}>
         <Box>
-          <Text fontSize={'24px'}>
+          <Text fontSize={{ base: '20px', md: '24px' }}>
             {t('SERVICE.TITLE1')} {''}
             <span
               style={{
@@ -54,17 +58,20 @@ const Services = () => {
             borderColor={'primary.500'}
             borderBottomWidth={'12px'}
             borderRadius={'12px'}
+            margin={'0 auto'}
           />
         </Box>
-        <Box width={'600px'}>
+        <Box width={{ base: '100%', md: '600px' }}>
           <Text fontSize={'14px'} fontWeight={'regular'} color={'gray.500'}>
             {t('SERVICE.DESC')}
           </Text>
         </Box>
       </VStack>
+
+      {/* Features Section */}
       <Flex
         width={'100%'}
-        p={'30px'}
+        p={{ base: '10px', md: '30px' }}
         alignItems={'center'}
         justifyContent={'center'}
         gap={'20px'}
@@ -75,8 +82,8 @@ const Services = () => {
             borderRadius={'12px'}
             p={'12px'}
             bgColor={hexToRGB('primary', 0.1)}
-            width={'350px'}
-            height={'200px'}
+            width={{ base: '100%', sm: '300px', md: '350px' }}
+            height={'auto'}
             animation={fadeInAnimation}
             style={{ animationDelay: `${index * 0.2}s` }}>
             <VStack

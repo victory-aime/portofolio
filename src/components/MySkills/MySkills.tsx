@@ -41,9 +41,12 @@ function MySkills() {
       width={'100%'}
       gap={'30px'}
       flexDirection={'column'}>
-      <VStack spacing={'12px'} alignItems={'flex-start'}>
+      <VStack
+        spacing={'12px'}
+        alignItems={{ base: 'center', md: 'flex-start' }}
+        textAlign={{ base: 'center', md: 'left' }}>
         <Box>
-          <Text fontSize={'24px'}>
+          <Text fontSize={{ base: '20px', md: '24px' }}>
             {t('MY')}{' '}
             <span
               style={{
@@ -64,14 +67,16 @@ function MySkills() {
             borderColor={'primary.500'}
             borderBottomWidth={'12px'}
             borderRadius={'12px'}
+            margin={'0 auto'}
           />
         </Box>
-        <Box width={'600px'}>
+        <Box width={{ base: '100%', md: '600px' }}>
           <Text fontSize={'14px'} fontWeight={'regular'} color={'gray.500'}>
             {t('TOOLS')}
           </Text>
         </Box>
       </VStack>
+
       <Box
         width={'100%'}
         p={'20px'}

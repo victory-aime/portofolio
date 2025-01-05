@@ -28,11 +28,19 @@ const Hero = () => {
     <Flex
       width={'100%'}
       p={'10px'}
-      alignItems={'flex-start'}
       gap={'20px'}
-      justifyContent={'space-between'}>
-      <Box pl={'20px'} width={'100%'}>
-        <VStack spacing={'15px'} alignItems={'flex-start'}>
+      justifyContent={'space-between'}
+      flexDirection={{ base: 'column', md: 'row' }}
+      alignItems={{ base: 'center', md: 'flex-start' }}>
+      {/* Left Section */}
+      <Box
+        pl={{ base: '0', md: '20px' }}
+        width={{ base: '100%', md: '50%' }}
+        textAlign={{ base: 'center', md: 'left' }}>
+        <VStack
+          spacing={'15px'}
+          p={{ base: '20px' }}
+          alignItems={{ base: 'center', md: 'flex-start' }}>
           <Text fontSize={'2xl'} fontWeight={'semibold'}>
             {t('HELLO')}
           </Text>
@@ -49,7 +57,7 @@ const Hero = () => {
             fontSize={'16px'}
             fontWeight={'regular'}
             color={'gray.500'}
-            textAlign={'justify'}>
+            textAlign={{ base: 'center', md: 'justify' }}>
             {t('PORTFOLIO_DESCRIPTION')}
           </Text>
           <Button
@@ -64,27 +72,31 @@ const Hero = () => {
           </Button>
         </VStack>
       </Box>
+
+      {/* Right Section */}
       <Flex
-        width={'100%'}
+        width={{ base: '100%', md: '50%' }}
         alignItems={'center'}
         justifyContent={'center'}
-        gap={'30px'}
-        flexDirection={'column'}>
+        flexDirection={'column'}
+        textAlign={'center'}>
         <Image
           src={'/assets/images/picture.png'}
           alt={'hero'}
           width={350}
           height={100}
+          style={{ borderRadius: '50%' }}
         />
         <Flex
           width={'100%'}
-          pr={'50px'}
+          pr={{ base: '0', md: '50px' }}
+          mt={{ base: '20px', md: '0' }}
           alignItems={'center'}
           gap={'20px'}
           justifyContent={'center'}>
           <Text>{t('FIND_ME_ON')}</Text>
           {svgArray.map((item, index) => (
-            <Link key={index} href={item?.link}>
+            <Link key={index} href={item?.link} isExternal>
               <Flex
                 gap={'20px'}
                 borderRadius={'50px'}
@@ -92,7 +104,8 @@ const Hero = () => {
                 justifyContent={'center'}
                 width={'45px'}
                 height={'45px'}
-                bgColor={hexToRGB('primary', 0.2)}>
+                bgColor={hexToRGB('primary', 0.2)}
+                _hover={{ bgColor: hexToRGB('primary', 0.4) }}>
                 <div>{item?.icon}</div>
               </Flex>
             </Link>

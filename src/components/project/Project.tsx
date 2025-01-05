@@ -39,11 +39,15 @@ function Project() {
   return (
     <Flex
       alignItems={'flex-start'}
-      p={'30px'}
+      p={{ base: '20px', md: '30px' }}
       width={'100%'}
-      gap={'30px'}
+      gap={{ base: '20px', md: '30px' }}
       flexDirection={'column'}>
-      <VStack spacing={'12px'} alignItems={'center'} width={'100%'}>
+      <VStack
+        spacing={'12px'}
+        width={'100%'}
+        alignItems={{ base: 'center', md: 'flex-start' }}
+        textAlign={{ base: 'center', md: 'left' }}>
         <Box>
           <Text fontSize={'24px'}>
             {t('MY')} {''}
@@ -55,7 +59,7 @@ function Project() {
             </span>
           </Text>
         </Box>
-        <Box width={'600px'}>
+        <Box width={{ base: '100%', md: '600px' }}>
           <Text
             textAlign={'center'}
             fontSize={'14px'}

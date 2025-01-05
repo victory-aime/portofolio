@@ -26,53 +26,62 @@ const skills = {
 
 const SkillsDisplay = () => {
   return (
-    <Flex width={'100%'}>
+    <Flex
+      width="100%"
+      p={{ base: '10px', md: '30px' }}
+      gap="20px"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="center">
       {Object.entries(skills).map(([category, skillSet]) => (
-        <Flex
+        <Box
           key={category}
-          width={'100%'}
-          p={'15px'}
-          alignItems={'flex-start'}
-          justifyContent={'center'}
-          gap={'20px'}
-          flexWrap={'wrap'}>
-          <Box textAlign="left" w="full">
-            <Text
-              fontSize={'22px'}
-              mb={4}
-              fontWeight={'medium'}
-              color={'white'}>
-              {category}
-            </Text>
-            <VStack spacing={4}>
-              {skillSet.map(skill => (
-                <Box
-                  key={skill.name}
-                  w="full"
-                  p={3}
-                  border={'dashed 0.2px #3BF686 '}
-                  borderRadius="md"
-                  _hover={{ bg: 'none' }}>
-                  <Flex alignItems={'center'} justifyContent={'space-between'}>
-                    <Text fontWeight="medium" mb={2}>
-                      {skill.name}
-                    </Text>
-                    <Text fontWeight="medium" mb={2}>
-                      {skill.mastery}%
-                    </Text>
-                  </Flex>
+          textAlign="left"
+          w={{ base: '100%', md: '80%', lg: '60%' }}
+          mb="20px">
+          {/* Skill Category Title */}
+          <Text
+            fontSize={{ base: '18px', md: '22px' }}
+            mb={4}
+            fontWeight="medium"
+            color="white"
+            textAlign={{ base: 'center', md: 'left' }}>
+            {category}
+          </Text>
 
-                  <Progress
-                    value={skill.mastery}
-                    size="sm"
-                    colorScheme="primary"
-                    borderRadius="md"
-                  />
-                </Box>
-              ))}
-            </VStack>
-          </Box>
-        </Flex>
+          {/* Skills List */}
+          <VStack spacing={4} p={{ base: '20px' }}>
+            {skillSet.map(skill => (
+              <Box
+                key={skill.name}
+                w="100%"
+                p={3}
+                border="dashed 0.2px #3BF686"
+                borderRadius="md"
+                bg="rgba(0, 0, 0, 0.3)">
+                <Flex
+                  alignItems="center"
+                  justifyContent="space-between"
+                  flexDirection={'row'}>
+                  <Text
+                    fontWeight="medium"
+                    mb={{ base: 2, sm: 0 }}
+                    textAlign={{ base: 'center', sm: 'left' }}>
+                    {skill.name}
+                  </Text>
+                  <Text fontWeight="medium">{skill.mastery}%</Text>
+                </Flex>
+                <Progress
+                  value={skill.mastery}
+                  size="sm"
+                  colorScheme="primary"
+                  borderRadius="md"
+                  mt={2}
+                />
+              </Box>
+            ))}
+          </VStack>
+        </Box>
       ))}
     </Flex>
   );

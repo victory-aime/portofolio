@@ -8,10 +8,17 @@ import { useTranslation } from 'react-i18next';
 const Certifications = () => {
   const { t } = useTranslation();
   return (
-    <Box p={'30px'} width={'100%'}>
-      <VStack spacing={'12px'} alignItems={'flex-start'}>
+    <Flex
+      p={{ base: '20px', md: '30px' }}
+      width={'100%'}
+      gap={{ base: '20px', md: '30px' }}
+      flexDirection={'column'}>
+      <VStack
+        spacing={'12px'}
+        alignItems={{ base: 'center', md: 'flex-start' }}
+        textAlign={{ base: 'center', md: 'left' }}>
         <Box>
-          <Text fontSize={'24px'}>
+          <Text fontSize={{ base: '20px', md: '24px' }}>
             {t('MY')}{' '}
             <span
               style={{
@@ -25,9 +32,10 @@ const Certifications = () => {
             borderColor={'primary.500'}
             borderBottomWidth={'12px'}
             borderRadius={'12px'}
+            margin={'0 auto'}
           />
         </Box>
-        <Box width={'600px'}>
+        <Box width={{ base: '100%', md: '600px' }}>
           <Text fontSize={'14px'} fontWeight={'regular'} color={'gray.500'}>
             {t('CERTIF_DESC')}
           </Text>
@@ -40,7 +48,7 @@ const Certifications = () => {
           mt={'20px'}
           borderWidth={3}
           borderColor={'linear-gradient(to left, #4CA9FF 49%, #3BF686 100%)'}>
-          <Box width={'450px'}>
+          <Box width={{ base: '100%', md: '430px' }}>
             <Image
               src={
                 'https://www.actuia.com/wp-content/uploads/2022/03/Meta-construction-metavers-Intelligence-Artificielle-1068x534.png'
@@ -55,6 +63,7 @@ const Certifications = () => {
               spacing={'20px'}
               alignItems={'flex-start'}
               mt={'10px'}
+              width={'100%'}
               justifyContent={'center'}>
               <Text fontSize={'22px'} fontWeight={'medium'}>
                 Meta Front-End{' '}
@@ -86,7 +95,7 @@ const Certifications = () => {
           </Box>
         </Box>
       </Center>
-    </Box>
+    </Flex>
   );
 };
 
