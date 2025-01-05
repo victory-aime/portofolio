@@ -58,13 +58,17 @@ function Project() {
               {t('PROJECT.TITLE')} {''}
             </span>
           </Text>
+          <Box
+            width={'70px'}
+            borderColor={'primary.500'}
+            borderBottomWidth={'12px'}
+            borderRadius={'12px'}
+            margin={{ base: '0 auto', md: '0' }}
+          />
         </Box>
+
         <Box width={{ base: '100%', md: '600px' }}>
-          <Text
-            textAlign={'center'}
-            fontSize={'14px'}
-            fontWeight={'regular'}
-            color={'gray.500'}>
+          <Text fontSize={'14px'} fontWeight={'regular'} color={'gray.500'}>
             {t('PROJECT.DESC')}
           </Text>
         </Box>
@@ -90,7 +94,7 @@ function Project() {
               borderWidth={2}
               _hover={{ backgroundColor: 'primary.500' }}
               borderColor={'linear-gradient(180deg, #4CA9FF 49%, #3BF686 100%)'}
-              width={'300px'}
+              width={'350px'}
               animation={zoomRotateAnimation}
               style={{ animationDelay: `${index * 0.3}s` }}>
               <VStack

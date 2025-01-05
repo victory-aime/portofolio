@@ -32,7 +32,7 @@ const Certifications = () => {
             borderColor={'primary.500'}
             borderBottomWidth={'12px'}
             borderRadius={'12px'}
-            margin={'0 auto'}
+            margin={{ base: '0 auto', md: '0' }}
           />
         </Box>
         <Box width={{ base: '100%', md: '600px' }}>

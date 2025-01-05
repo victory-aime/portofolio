@@ -51,6 +51,10 @@
     "QUESTIONS": "Have a Questions?",
     "SEND_ME": " Send me a message",
     "VIEW_CERTIFICATE": "View certification",
+    "SUCCESS": "Your message has been sent",
+    "ERROR": "Error sending email",
+    "NETWORK_ERROR": "Connection error, please try again later!",
+    "NOTIFICATION": "Notification",
     "FORM": {
       "TITLE": " Fill in the form below with your contact details and I'll get back to you as soon as possible.",
       "NAME": "Name",

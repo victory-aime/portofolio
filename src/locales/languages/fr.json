@@ -52,12 +52,16 @@
     "QUESTIONS": "Avez-vous des Questions?",
     "SEND_ME": " Envoyez-moi un message",
     "VIEW_CERTIFICATE": "Voir la certification",
+    "SUCCESS": "Votre message a bien été envoyé",
+    "ERROR": "Erreur lors de l'envoi de l'email",
+    "NETWORK_ERROR": "Erreur de connexion veuillez reesayer plus tard !",
+    "NOTIFICATION": "Notification",
     "FORM": {
       "TITLE": " Remplissez le formulaire ci-dessous avec vos coordonnées et je vous recontacterai dès que possible.",
       "NOM": "Nom",
       "FIRST_NAME": "Prénom",
       "EMAIL": "Email",
-      "SUJET": "Sujet",
+      "SUBJECT": "Sujet",
       "MESSAGE": "Votre message...",
       "CITATION": " Toujours prêt à discuter de vos idées et de vos projets !"
     }

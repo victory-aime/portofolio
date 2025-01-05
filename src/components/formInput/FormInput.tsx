@@ -2,6 +2,7 @@ import React from 'react';
 import { useField } from 'formik';
 import { useTranslation } from 'react-i18next';
 import {
+  Box,
   Flex,
   FormControl,
   FormErrorMessage,
@@ -95,8 +96,14 @@ const FormTextInput = ({
         />
       </InputGroup>
       {isError && (
-        <Flex gap={'5px'} mt={2}>
-          <InfoOutlineIcon fill={'red.500'} />
+        <Flex
+          gap={'5px'}
+          mt={1}
+          alignItems={'center'}
+          justifyContent={'flex-start'}>
+          <Box mt={1} color={'red.500'}>
+            <InfoOutlineIcon />
+          </Box>
           <FormErrorMessage>{error}</FormErrorMessage>
         </Flex>
       )}

@@ -3,6 +3,7 @@ import { useField } from 'formik';
 import { TextInputProps } from '_components/formInput/FormInput';
 import { hexToRGB } from '_theme/colors';
 import {
+  Box,
   Flex,
   FormControl,
   FormErrorMessage,
@@ -72,11 +73,17 @@ const FormTextArea: FC<FormTextAreaProps> = ({
         }}
       />
       {isError && (
-        <Flex gap={'5px'} mt={2}>
-          <InfoOutlineIcon fill={'red.500'} />
+        <Flex
+          gap={'5px'}
+          mt={1}
+          alignItems={'center'}
+          justifyContent={'flex-start'}>
+          <Box mt={1} color={'red.500'}>
+            <InfoOutlineIcon />
+          </Box>
           <FormErrorMessage>{error}</FormErrorMessage>
         </Flex>
-      )}{' '}
+      )}
       {localErrorMsg && (
         <FormHelperText p={1}>{t(localErrorMsg)}</FormHelperText>
       )}

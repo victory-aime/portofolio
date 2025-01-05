@@ -32,7 +32,6 @@ const Hero = () => {
       justifyContent={'space-between'}
       flexDirection={{ base: 'column', md: 'row' }}
       alignItems={{ base: 'center', md: 'flex-start' }}>
-      {/* Left Section */}
       <Box
         pl={{ base: '0', md: '20px' }}
         width={{ base: '100%', md: '50%' }}
@@ -61,6 +60,9 @@ const Hero = () => {
             {t('PORTFOLIO_DESCRIPTION')}
           </Text>
           <Button
+            as="a"
+            href="/assets/cv.pdf"
+            download
             color={'white'}
             _hover={{
               background: 'linear-gradient(to left, #4CA9FF 49%, #3BF686 100%)',
@@ -72,8 +74,6 @@ const Hero = () => {
           </Button>
         </VStack>
       </Box>
-
-      {/* Right Section */}
       <Flex
         width={{ base: '100%', md: '50%' }}
         alignItems={'center'}

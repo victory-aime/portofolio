@@ -86,21 +86,17 @@ const Header: FC<HeaderProps> = ({ sections, handleScrollToSection }) => {
 
   return (
     <Box p={'10px'} bgColor={'#0F0F0F'} w={'100%'}>
-      {/* Header container */}
       <Flex
         p={'10px'}
         alignItems={'center'}
         justifyContent={'space-between'}
         flexWrap={'wrap'}>
-        {/* Logo */}
         <Box>
           <Text fontSize={'2xl'} fontWeight={'bold'}>
             {t('MON')}
             <span style={{ color: '#7456FF' }}>{t('PORTFOLIO')}</span>{' '}
           </Text>
         </Box>
-
-        {/* Desktop Navigation */}
         <HStack
           display={{ base: 'none', md: 'flex' }}
           spacing={'20px'}
@@ -120,7 +116,6 @@ const Header: FC<HeaderProps> = ({ sections, handleScrollToSection }) => {
               {t(item?.title)}
             </Text>
           ))}
-          {/* Language Selector */}
           <Menu>
             <MenuButton
               as={Button}
@@ -152,8 +147,6 @@ const Header: FC<HeaderProps> = ({ sections, handleScrollToSection }) => {
             </MenuList>
           </Menu>
         </HStack>
-
-        {/* Mobile Navigation */}
         <Box
           display={{ base: 'block', md: 'none' }}
           animation={`${fadeIn}  0.8s ease-out`}>
@@ -166,7 +159,6 @@ const Header: FC<HeaderProps> = ({ sections, handleScrollToSection }) => {
             onClick={onOpen}
           />
         </Box>
-
         {responsiveMode === 'mobile' && (
           <Drawer isOpen={isOpen} placement="top" onClose={onClose}>
             <DrawerOverlay />

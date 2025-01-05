@@ -38,7 +38,6 @@ const Services = () => {
       width={'100%'}
       gap={{ base: '20px', md: '30px' }}
       flexDirection={'column'}>
-      {/* Header Section */}
       <VStack
         spacing={'12px'}
         alignItems={{ base: 'center', md: 'flex-start' }}
@@ -58,7 +57,7 @@ const Services = () => {
             borderColor={'primary.500'}
             borderBottomWidth={'12px'}
             borderRadius={'12px'}
-            margin={'0 auto'}
+            margin={{ base: '0 auto', md: '0' }}
           />
         </Box>
         <Box width={{ base: '100%', md: '600px' }}>
