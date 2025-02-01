@@ -4,39 +4,22 @@ import { Box, Text, Flex, VStack } from '@chakra-ui/react';
 import { Carousel } from '../chakra-carousel';
 import { CAROUSEL_TYPE } from '../chakra-carousel/caroussel.model';
 import Image from 'next/image';
-import {
-  Css,
-  Docker,
-  Git,
-  GraphQL,
-  MongoDB,
-  NestJS,
-  NextJS,
-  NodeJS,
-  ReactImage,
-  Tailwind,
-} from '_assets/images';
 import { hexToRGB } from '_/theme/colors';
 import { useTranslation } from 'react-i18next';
+import { skillsArray } from '_/data/data';
+import { useAnimateOnScroll } from '_app/hooks/useAnimateOnScroll';
 
 function MySkills() {
   const { t } = useTranslation();
-  const imageArray = [
-    Css,
-    Docker,
-    GraphQL,
-    NodeJS,
-    NestJS,
-    NextJS,
-    Git,
-    MongoDB,
-    ReactImage,
-    Tailwind,
-  ];
+  const { ref, inView } = useAnimateOnScroll('skills');
 
   return (
     <Flex
+      ref={ref}
       alignItems={'flex-start'}
+      opacity={inView ? 1 : 0}
+      transform={inView ? 'translateY(0)' : 'translateY(20px)'}
+      transition="opacity 0.8s ease-out, transform 0.8s ease-out"
       p={'30px'}
       width={'100%'}
       gap={'30px'}
@@ -95,8 +78,8 @@ function MySkills() {
             onChange={() => {}}
             withControl={false}
             isInfinite={true}
-            itemPerSlide={1}>
-            {imageArray?.map((_, index) => (
+            itemPerSlide={3}>
+            {skillsArray?.map((_, index) => (
               <Flex key={index}>
                 <Image src={_} alt={'skills'} width={200} height={200} />
               </Flex>

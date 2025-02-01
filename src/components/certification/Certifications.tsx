@@ -4,12 +4,19 @@ import React from 'react';
 import { Box, Text, VStack, Flex, Center, Link } from '@chakra-ui/react';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
+import { useAnimateOnScroll } from '_/app/hooks/useAnimateOnScroll';
 
 const Certifications = () => {
   const { t } = useTranslation();
+  const { ref, inView } = useAnimateOnScroll('certifications');
+
   return (
     <Flex
+      ref={ref}
       p={{ base: '20px', md: '30px' }}
+      opacity={inView ? 1 : 0}
+      transform={inView ? 'translateY(0)' : 'translateY(20px)'}
+      transition="opacity 0.8s ease-out, transform 0.8s ease-out"
       width={'100%'}
       gap={{ base: '20px', md: '30px' }}
       flexDirection={'column'}>

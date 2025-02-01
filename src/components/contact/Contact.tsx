@@ -22,19 +22,13 @@ import {
 } from './validation/validation';
 import { LoadingDots } from '_animations/LoaderDots';
 import axios from 'axios';
-
-export enum ToastStatus {
-  DEFAULT = 'default',
-  SUCCESS = 'success',
-  ERROR = 'error',
-  WARN = 'warning',
-  INFO = 'info',
-}
+import { useAnimateOnScroll } from '_/app/hooks/useAnimateOnScroll';
+import { ToastStatus } from '_/enum/toast';
 
 const Contact = () => {
   const { t } = useTranslation();
   const toast = useToast();
-
+  const { ref, inView } = useAnimateOnScroll('contact');
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmitForm = async (
@@ -96,8 +90,12 @@ const Contact = () => {
 
   return (
     <Flex
+      ref={ref}
       width="100%"
       gap={{ base: '20px', md: '30px' }}
+      opacity={inView ? 1 : 0}
+      transform={inView ? 'translateY(0)' : 'translateY(20px)'}
+      transition="opacity 0.8s ease-out, transform 0.8s ease-out"
       flexDirection="column"
       p={{ base: '15px', md: '30px' }}>
       <VStack

@@ -1,40 +1,23 @@
 import { Box, Flex, VStack, Text } from '@chakra-ui/react';
-import { keyframes } from '@emotion/react';
 import { hexToRGB } from '_/theme/colors';
-import { BookIcon } from '_assets/svg';
 import { useTranslation } from 'react-i18next';
-
-const fadeIn = keyframes`
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-`;
-
-const fadeInAnimation = `${fadeIn} 0.8s ease-in-out forwards`;
+import { fadeIn } from '_animations/animation';
+import { useAnimateOnScroll } from '_app/hooks/useAnimateOnScroll';
+import { serviceData } from '_/data/data';
 
 const Services = () => {
   const { t } = useTranslation();
-  const svgArray = [
-    {
-      icon: <BookIcon />,
-      title: 'SERVICE.FEATURES.MOBILE_APP',
-      desc: 'SERVICE.FEATURES.MOBILE_APP_DESC',
-    },
-    {
-      icon: <BookIcon />,
-      title: 'SERVICE.FEATURES.BACKEND_APP',
-      desc: 'SERVICE.FEATURES.BACKEND_APP_DESC',
-    },
-    {
-      icon: <BookIcon />,
-      title: 'SERVICE.FEATURES.FIGMA_APP',
-      desc: 'SERVICE.FEATURES.FIGMA_APP_DESC',
-    },
-  ];
+  const fadeInAnimation = `${fadeIn} 0.8s ease-in-out forwards`;
+  const { ref, inView } = useAnimateOnScroll('services');
 
   return (
     <Flex
+      ref={ref}
       alignItems={'flex-start'}
       p={{ base: '20px', md: '30px' }}
+      opacity={inView ? 1 : 0}
+      transform={inView ? 'translateY(0)' : 'translateY(20px)'}
+      transition="opacity 0.8s ease-out, transform 0.8s ease-out"
       width={'100%'}
       gap={{ base: '20px', md: '30px' }}
       flexDirection={'column'}>
@@ -75,7 +58,7 @@ const Services = () => {
         justifyContent={'center'}
         gap={'20px'}
         flexWrap={'wrap'}>
-        {svgArray?.map((item, index) => (
+        {serviceData?.map((item, index) => (
           <Box
             key={index}
             borderRadius={'12px'}

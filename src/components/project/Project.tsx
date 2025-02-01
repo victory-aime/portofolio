@@ -2,44 +2,24 @@
 
 import React from 'react';
 import { Box, Flex, Link, Text, VStack } from '@chakra-ui/react';
-import { hexToRGB } from '_/theme/colors';
-import { BookIcon } from '_assets/svg';
+import { hexToRGB } from '_theme/colors';
 import { ArrowRightIcon } from '@chakra-ui/icons';
 import { useTranslation } from 'react-i18next';
-import { keyframes } from '@emotion/react';
+import { useAnimateOnScroll } from '_app/hooks/useAnimateOnScroll';
+import { serviceData } from '_/data/data';
 
 function Project() {
   const { t } = useTranslation();
-
-  const zoomRotate = keyframes`
-    from { opacity: 0; transform: scale(0.8) rotate(-10deg); }
-    to { opacity: 1; transform: scale(1) rotate(0deg); }
-  `;
-
-  const zoomRotateAnimation = `${zoomRotate} 0.8s ease-in-out forwards`;
-
-  const svgArray = [
-    {
-      icon: <BookIcon />,
-      title: 'PROJECT.FEATURES.SAAS_SCHOOL_APP',
-      desc: 'PROJECT.FEATURES.SAAS_SCHOOL_DESC',
-    },
-    {
-      icon: <BookIcon />,
-      title: 'PROJECT.FEATURES.RENTAL_APP',
-      desc: 'PROJECT.FEATURES.RENTAL_APP_DESC',
-    },
-    {
-      icon: <BookIcon />,
-      title: 'PROJECT.FEATURES.BVG_APP',
-      desc: 'PROJECT.FEATURES.BVG_APP_DESC',
-    },
-  ];
+  const { ref, inView } = useAnimateOnScroll('project');
 
   return (
     <Flex
+      ref={ref}
       alignItems={'flex-start'}
       p={{ base: '20px', md: '30px' }}
+      opacity={inView ? 1 : 0}
+      transform={inView ? 'translateY(0)' : 'translateY(20px)'}
+      transition="opacity 0.8s ease-out, transform 0.8s ease-out"
       width={'100%'}
       gap={{ base: '20px', md: '30px' }}
       flexDirection={'column'}>
@@ -85,7 +65,7 @@ function Project() {
           justifyContent={'center'}
           gap={'20px'}
           flexWrap={'wrap'}>
-          {svgArray?.map((item, index) => (
+          {serviceData?.map((item, index) => (
             <Box
               key={index}
               borderRadius={'12px'}
@@ -95,7 +75,6 @@ function Project() {
               _hover={{ backgroundColor: 'primary.500' }}
               borderColor={'linear-gradient(180deg, #4CA9FF 49%, #3BF686 100%)'}
               width={'350px'}
-              animation={zoomRotateAnimation}
               style={{ animationDelay: `${index * 0.3}s` }}>
               <VStack
                 alignItems={'flex-start'}

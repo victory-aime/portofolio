@@ -27,8 +27,9 @@ import { FlagImagesKeys } from '_assets/images/flag';
 import { useTranslation } from 'react-i18next';
 import FlagImageComponent from '../flag/FlagImageComponent';
 import { hexToRGB } from '_theme/colors';
-import { keyframes } from '@emotion/react';
 import { FC } from 'react';
+import { fadeInMenu } from '_animations/animation';
+import { languagesOptions } from '_/data/data';
 
 type HeaderProps = {
   sections: {
@@ -54,17 +55,6 @@ const Header: FC<HeaderProps> = ({ sections, handleScrollToSection }) => {
       });
   };
 
-  const LANGUAGES_OPTIONS = [
-    {
-      code: 'en',
-      label: 'English',
-    },
-    {
-      code: 'fr',
-      label: 'Français',
-    },
-  ];
-
   const links = [
     { title: 'HEADER.HOME', ref: sections.serviceRef },
     { title: 'HEADER.SERVICE', ref: sections.serviceRef },
@@ -73,17 +63,6 @@ const Header: FC<HeaderProps> = ({ sections, handleScrollToSection }) => {
     { title: 'HEADER.CONTACT', ref: sections.contactRef },
   ];
 
-  const fadeIn = keyframes`
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`;
-
   return (
     <Box p={'10px'} bgColor={'#0F0F0F'} w={'100%'}>
       <Flex
@@ -91,7 +70,7 @@ const Header: FC<HeaderProps> = ({ sections, handleScrollToSection }) => {
         alignItems={'center'}
         justifyContent={'space-between'}
         flexWrap={'wrap'}>
-        <Box>
+        <Box animation={`${fadeInMenu}  0.8s ease-out`}>
           <Text fontSize={'2xl'} fontWeight={'bold'}>
             {t('MON')}
             <span style={{ color: '#7456FF' }}>{t('PORTFOLIO')}</span>{' '}
@@ -100,6 +79,7 @@ const Header: FC<HeaderProps> = ({ sections, handleScrollToSection }) => {
         <HStack
           display={{ base: 'none', md: 'flex' }}
           spacing={'20px'}
+          animation={`${fadeInMenu}  0.8s ease-out`}
           alignItems={'center'}>
           {links.map((item, index) => (
             <Text
@@ -136,7 +116,7 @@ const Header: FC<HeaderProps> = ({ sections, handleScrollToSection }) => {
               borderColor={
                 'linear-gradient(to right, #4CA9FF 49%, #3BF686 100%)'
               }>
-              {LANGUAGES_OPTIONS?.map(language => (
+              {languagesOptions?.map(language => (
                 <MenuItem
                   key={language.code}
                   color={'black'}
@@ -149,7 +129,7 @@ const Header: FC<HeaderProps> = ({ sections, handleScrollToSection }) => {
         </HStack>
         <Box
           display={{ base: 'block', md: 'none' }}
-          animation={`${fadeIn}  0.8s ease-out`}>
+          animation={`${fadeInMenu}  0.8s ease-out`}>
           <IconButton
             icon={<HamburgerIcon />}
             color="primary.500"
@@ -209,7 +189,7 @@ const Header: FC<HeaderProps> = ({ sections, handleScrollToSection }) => {
                       borderColor={
                         'linear-gradient(to right, #4CA9FF 49%, #3BF686 100%)'
                       }>
-                      {LANGUAGES_OPTIONS.map(language => (
+                      {languagesOptions.map(language => (
                         <MenuItem
                           key={language.code}
                           color={'black'}

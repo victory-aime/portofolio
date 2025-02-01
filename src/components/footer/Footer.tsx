@@ -6,17 +6,24 @@ import Image from 'next/image';
 import { FooterImgae } from '_assets/images';
 import { useTranslation } from 'react-i18next';
 import { hexToRGB } from '_theme/colors';
-import { svgArray } from '../hero/Hero';
 import { EmailIcon, PhoneIcon } from '@chakra-ui/icons';
+import { socialDataLinks } from '_/data/data';
+import { useAnimateOnScroll } from '_app/hooks/useAnimateOnScroll';
+import CustomTooltip from '../CustomTooltip/CustomTooltip';
 
 const Footer = () => {
   const { t } = useTranslation();
+  const { ref, inView } = useAnimateOnScroll('footer');
 
   return (
     <Box bg="#0F0F0F" width="100%" p={{ base: '20px', md: '30px' }}>
       {/* Main Footer Content */}
       <Flex
+        ref={ref}
         width="100%"
+        opacity={inView ? 1 : 0}
+        transform={inView ? 'translateY(0)' : 'translateY(20px)'}
+        transition="opacity 0.8s ease-out, transform 0.8s ease-out"
         flexDirection={{ base: 'column', md: 'row' }}
         alignItems="flex-start"
         justifyContent="space-between"
@@ -66,21 +73,23 @@ const Footer = () => {
             <Text fontSize={{ base: '14px', md: '16px' }}>
               {t('FIND_ME_ON')}
             </Text>
-            {svgArray.map((item, index) => (
-              <Link key={index} href={item?.link} isExternal>
-                <Flex
-                  gap="20px"
-                  borderRadius="50%"
-                  alignItems="center"
-                  justifyContent="center"
-                  width="45px"
-                  height="45px"
-                  bgColor={hexToRGB('primary', 0.2)}
-                  transition="transform 0.2s"
-                  _hover={{ transform: 'scale(1.1)' }}>
-                  {item?.icon}
-                </Flex>
-              </Link>
+            {socialDataLinks.map((item, index) => (
+              <CustomTooltip key={index} label={item?.label}>
+                <Link href={item?.link} isExternal>
+                  <Flex
+                    gap="20px"
+                    borderRadius="full"
+                    alignItems="center"
+                    justifyContent="center"
+                    width="45px"
+                    height="45px"
+                    bgColor={hexToRGB('primary', 0.2)}
+                    transition="transform 0.2s"
+                    _hover={{ transform: 'scale(1.1)' }}>
+                    {item?.icon}
+                  </Flex>
+                </Link>
+              </CustomTooltip>
             ))}
           </Flex>
         </Box>

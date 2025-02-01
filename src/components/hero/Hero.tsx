@@ -1,34 +1,28 @@
-'use client';
-
 import { Box, Button, Flex, Text, VStack, Link } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import Image from 'next/image';
-import { Facebook, Instagram, Linkedin } from '_assets/svg';
 import { hexToRGB } from '_theme/colors';
 import { DownloadIcon } from '@chakra-ui/icons';
-
-export const svgArray = [
-  {
-    link: 'https://www.facebook.com/',
-    icon: <Facebook />,
-  },
-  {
-    link: 'https://www.instagram.com/',
-    icon: <Instagram />,
-  },
-  {
-    link: 'https://www.linkedin.com/feed/',
-    icon: <Linkedin />,
-  },
-];
+import { textTypings, zoomIn } from '_animations/animation';
+import { socialDataLinks } from '_/data/data';
+import { useAnimateOnScroll } from '_app/hooks/useAnimateOnScroll';
+import CustomTooltip from '../CustomTooltip/CustomTooltip';
 
 const Hero = () => {
   const { t } = useTranslation();
+  const textTypingsAnimation = `${textTypings} 5s steps(20) infinite`;
+  const zoomInImage = `${zoomIn} 1.2s ease-in-out`;
+  const { ref, inView } = useAnimateOnScroll('hero');
+
   return (
     <Flex
+      ref={ref}
       width={'100%'}
       p={'10px'}
       gap={'20px'}
+      opacity={inView ? 1 : 0}
+      transform={inView ? 'translateY(0)' : 'translateY(20px)'}
+      transition="opacity 0.8s ease-out, transform 0.8s ease-out"
       justifyContent={'space-between'}
       flexDirection={{ base: 'column', md: 'row' }}
       alignItems={{ base: 'center', md: 'flex-start' }}>
@@ -48,7 +42,26 @@ const Hero = () => {
               {t('WHO_AM_I')} {''}
               <span style={{ color: '#7456FF' }}>{t('USER_NAME')}</span>
             </Text>
-            <Text fontSize={'14px'} fontWeight={'regular'} color={'gray.500'}>
+            <Text
+              as="span"
+              color="primary.500"
+              fontWeight={'bold'}
+              fontSize={{ base: '20px', md: '24px' }}
+              whiteSpace="nowrap"
+              overflow={'visible'}
+              display="inline-block"
+              position="relative"
+              width="fit-content"
+              animation={textTypingsAnimation}
+              css={{
+                '&::before': {
+                  content: '"|"',
+                  position: 'absolute',
+                  right: '-10px',
+                  color: 'white',
+                  animation: `blinkCursor`,
+                },
+              }}>
               {t('JOB_TITLE')}
             </Text>
           </Box>
@@ -63,6 +76,7 @@ const Hero = () => {
             as="a"
             href="/assets/cv.pdf"
             download
+            mt={{ base: 4, md: 2 }}
             color={'white'}
             _hover={{
               background: 'linear-gradient(to left, #4CA9FF 49%, #3BF686 100%)',
@@ -79,6 +93,7 @@ const Hero = () => {
         alignItems={'center'}
         justifyContent={'center'}
         flexDirection={'column'}
+        animation={zoomInImage}
         textAlign={'center'}>
         <Image
           src={'/assets/images/picture.png'}
@@ -95,20 +110,22 @@ const Hero = () => {
           gap={'20px'}
           justifyContent={'center'}>
           <Text>{t('FIND_ME_ON')}</Text>
-          {svgArray.map((item, index) => (
-            <Link key={index} href={item?.link} isExternal>
-              <Flex
-                gap={'20px'}
-                borderRadius={'50px'}
-                alignItems={'center'}
-                justifyContent={'center'}
-                width={'45px'}
-                height={'45px'}
-                bgColor={hexToRGB('primary', 0.2)}
-                _hover={{ bgColor: hexToRGB('primary', 0.4) }}>
-                <div>{item?.icon}</div>
-              </Flex>
-            </Link>
+          {socialDataLinks.map((item, index) => (
+            <CustomTooltip key={index} label={item?.label}>
+              <Link href={item?.link} isExternal>
+                <Flex
+                  gap={'20px'}
+                  borderRadius={'50px'}
+                  alignItems={'center'}
+                  justifyContent={'center'}
+                  width={'45px'}
+                  height={'45px'}
+                  bgColor={hexToRGB('primary', 0.2)}
+                  _hover={{ bgColor: hexToRGB('primary', 0.4) }}>
+                  <div>{item?.icon}</div>
+                </Flex>
+              </Link>
+            </CustomTooltip>
           ))}
         </Flex>
       </Flex>

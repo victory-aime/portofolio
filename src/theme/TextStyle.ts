@@ -5,7 +5,7 @@ export const TextStyles: Record<string, StyleConfig> = {
     baseStyle: {
       fontSize: '16px',
       fontWeight: '500',
-      lineHeight: '1.8',
+      lineHeight: '2.1',
     },
     variants: {
       'panel-title': {

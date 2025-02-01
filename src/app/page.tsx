@@ -11,8 +11,8 @@ import Contact from '_components/contact/Contact';
 import Footer from '_components/footer/Footer';
 import { ScrollAnimationProvider } from './hooks/scrollAnimationContect';
 import { useEffect, useRef, useState } from 'react';
-import { keyframes } from '@emotion/react';
 import { ArrowUpIcon } from '@chakra-ui/icons';
+import { fadeIn } from '_animations/animation';
 
 export default function Home() {
   const [showScroll, setShowScroll] = useState(false);
@@ -35,17 +35,6 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const fadeIn = keyframes`
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  `;
 
   const handleScrollToSection = (ref: React.RefObject<HTMLElement> | null) => {
     console.log('handleScrollToSection', ref?.current);

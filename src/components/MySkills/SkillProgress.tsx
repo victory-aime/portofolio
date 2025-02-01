@@ -1,39 +1,24 @@
 import React from 'react';
 import { Box, VStack, Text, Progress, Flex } from '@chakra-ui/react';
-
-const skills = {
-  FrontEnd: [
-    { name: 'ReactJS', mastery: 90 },
-    { name: 'React Native', mastery: 90 },
-    { name: 'NextJS', mastery: 90 },
-    { name: 'HTML5', mastery: 95 },
-    { name: 'CSS3', mastery: 90 },
-    { name: 'TailwindCSS', mastery: 80 },
-  ],
-  BackEnd: [
-    { name: 'Node.js', mastery: 95 },
-    { name: 'Express', mastery: 80 },
-    { name: 'NestJS', mastery: 90 },
-    { name: 'PostgreSQL', mastery: 100 },
-  ],
-  'Deployment & Orchestration': [
-    { name: 'Git/GitHub', mastery: 85 },
-    { name: 'Docker', mastery: 70 },
-    { name: 'RESTful APIs', mastery: 90 },
-    { name: 'Responsive Design', mastery: 95 },
-  ],
-};
+import { skillsData } from '_/data/data';
+import { useAnimateOnScroll } from '_/app/hooks/useAnimateOnScroll';
 
 const SkillsDisplay = () => {
+  const { ref, inView } = useAnimateOnScroll('skill-list');
+
   return (
     <Flex
+      ref={ref}
       width="100%"
       p={{ base: '10px', md: '30px' }}
       gap="20px"
+      opacity={inView ? 1 : 0}
+      transform={inView ? 'translateY(0)' : 'translateY(20px)'}
+      transition="opacity 0.8s ease-out, transform 0.8s ease-out"
       flexDirection="column"
       alignItems="center"
       justifyContent="center">
-      {Object.entries(skills).map(([category, skillSet]) => (
+      {Object.entries(skillsData).map(([category, skillSet]) => (
         <Box
           key={category}
           textAlign="left"
