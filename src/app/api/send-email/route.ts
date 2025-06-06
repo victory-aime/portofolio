@@ -7,13 +7,13 @@ export async function POST(req: Request) {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.NEXT_PUBLIC_GOOGLE_EMAIL,
-        pass: process.env.NEXT_PUBLIC_GOOGLE_PASSWORD,
+        user: process.env.GOOGLE_EMAIL,
+        pass: process.env.GOOGLE_PASSWORD,
       },
     });
     const mailOptions = {
       from: `"${sender.name}" <${sender?.address}>`,
-      to: process.env.NEXT_PUBLIC_GOOGLE_EMAIL,
+      to: process.env.GOOGLE_EMAIL,
       replyTo: sender?.address,
       subject,
       text: `
